@@ -8,7 +8,10 @@
 
 
 class cellule {
-
+private:
+    int value;
+public:
+    cellule();
 };
 
 
