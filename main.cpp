@@ -3,8 +3,9 @@
 
 int main() {
     std::cout << "Hello, World!" << std::endl;
-    Board plateau(4,0);
+    Board plateau(20,0);
     plateau.initboard();
+    plateau.draw();
 
     return 0;
 }

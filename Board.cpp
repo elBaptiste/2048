@@ -6,15 +6,30 @@
 #include "Board.h"
 #include "cellule.h"
 
-Board::Board(): _size(0),_score(0) {}
+Board::Board() : _size(0), _score(0) {}
 Board::Board(int size, int score)
-    : _size(size), _score(score) {}
+    : _size(size), _score(score), _board(size, std::vector<int>(size, 0)) {}
 
-void Board::initboard(int board[][]) {
-    for(int i=0; i<_size; i++) {
-        for(int j=0; j<_size; j++) {
-            board[i][j] = 0;
+
+void Board::initboard() {
+    for (int i = 0; i < _size; i++) {
+        for (int j = 0; j < _size; j++) {
+            _board[i][j] = 0;
         }
+    }
+}
+
+void Board::draw() const {
+    for (int i = 0; i < _size; i++) {
+        std::cout << " _" ;
+        for (int k = 0; k < _size; k++) {
+            std::cout << "____";
+        }
+        std::cout << std::endl;
+        for (int j = 0; j < _size; j++) {
+            std::cout << " | " << _board[i][j];
+        }
+        std::cout << " |" << std::endl;
     }
 
 }
@@ -24,7 +39,7 @@ char Board::movement(char direction) {
     std::cin >> direction;
     return direction;
 }
-
+/*
 int Board::creation(int _c_value, int _y, int _x){
     _x = rand()%4;
     _y = rand()%4;
@@ -40,17 +55,4 @@ int Board::creation(int _c_value, int _y, int _x){
     board[_x][_y] = cell;
     return 0;
 }
-
-void Board::draw(int board[][]) {
-    for (int i = 0 ; i < _size ; i++) {
-        std::cout << "________________" << std::endl;
-
-        for (int j = 0 ; j < _size ; j++) {
-        std::cout << " | " << board[i][j];
-        }
-        std::cout << " |" << std::endl;
-
-    }
-
-    std::cout << "________________" << std::endl;
-}
+*/
