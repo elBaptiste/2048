@@ -11,6 +11,7 @@ class cellule {
 private:
     int value;
 public:
+    cellule();
     cellule(int value_);
     int GetValue();
 };
