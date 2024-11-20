@@ -6,6 +6,16 @@
 #include "Board.h"
 #include "cellule.h"
 
+Board::Board(int size_, int score_, cellule board_()) {
+    size = size_;
+    score = score_;
+    for(int i=0; i<size; i++) {
+        for(int j=0; j<size; j++) {
+            board[i][j] = board_.value;
+        }
+    }
+}
+
 void Board::initboard() {
     for(int i=0; i<size; i++) {
         for(int j=0; j<size; j++) {

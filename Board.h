@@ -10,12 +10,12 @@
 
 class Board {
 private:
-    int size = 4;
-    cellule board[self.size][seld.size];
-    int score = 0;
+    int size;
+    cellule board[4][4];
+    int score;
 
 public:
-    Board();
+    Board(int size_, int score_, cellule board_(value=0));
     void initboard();
     char movement(char direction);
     int creation(int _c_value, int _y, int _x);
