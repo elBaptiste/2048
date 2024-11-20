@@ -17,7 +17,7 @@ public:
     Board(int size_, int score_);
     void initboard();
     char movement(char direction);
-    int creation(int _c_value, int _y, int _x);
+    int creation();
     int suppression(int _x, int y_);
     void fusion(char _direction);
     void draw();

@@ -10,6 +10,7 @@ int main() {
     //la_cellule = cellule::cellule(5);
     printf("%d", la_celulle.GetValue());
     Board plateau(4, 0);
+    plateau.creation();
     plateau.draw();
 
     return 0;

@@ -5,6 +5,7 @@
 #include <random>
 #include "Board.h"
 #include "cellule.h"
+#include "time.h"
 
 Board::Board(int size_, int score_) {
     cellule calamar;
@@ -31,9 +32,11 @@ char Board::movement(char direction) {
     return direction;
 }
 
-int Board::creation(int _c_value, int _y, int _x){
-    _x = rand()%4;
-    _y = rand()%4;
+int Board::creation(){
+    srand(time(NULL));
+    int notEmpty = 0;
+    int _x = rand()%4;
+    int _y = rand()%4;
     int cap = rand()%100;
     int value_new_cell;
     if(cap < 40) {
@@ -43,7 +46,18 @@ int Board::creation(int _c_value, int _y, int _x){
         value_new_cell = 2;
     }
     cellule cell(value_new_cell);
-    board[_x][_y] = cell;
+
+    while(notEmpty == 0) {
+        if(board[_x][_y].GetValue() == 0) {
+            board[_x][_y] = cell;
+            notEmpty = 1;
+        }
+        else {
+            _x = rand()%4;
+            _y = rand()%4;
+        }
+    }
+
     return 0;
 }
 
