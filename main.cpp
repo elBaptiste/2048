@@ -1,5 +1,6 @@
 #include <iostream>
 #include "cellule.h"
+#include "Board.h"
 
 
 int main() {
@@ -8,8 +9,8 @@ int main() {
     cellule la_celulle(4);
     //la_cellule = cellule::cellule(5);
     printf("%d", la_celulle.GetValue());
-    //Board plateau();
-    //plateau.initboard();
+    Board plateau(4, 0);
+    plateau.draw();
 
     return 0;
 }

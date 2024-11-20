@@ -14,7 +14,7 @@ private:
     int score;
 
 public:
-    Board(int size_, int score_, cellule board_(value=0));
+    Board(int size_, int score_);
     void initboard();
     char movement(char direction);
     int creation(int _c_value, int _y, int _x);
