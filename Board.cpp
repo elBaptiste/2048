@@ -6,12 +6,17 @@
 #include "Board.h"
 #include "cellule.h"
 
-void Board::initboard() {
-    for(int i=0; i<size; i++) {
-        for(int j=0; j<size; j++) {
+Board::Board(): _size(0),_score(0) {}
+Board::Board(int size, int score)
+    : _size(size), _score(score) {}
+
+void Board::initboard(int board[][]) {
+    for(int i=0; i<_size; i++) {
+        for(int j=0; j<_size; j++) {
             board[i][j] = 0;
         }
     }
+
 }
 
 char Board::movement(char direction) {
@@ -36,12 +41,12 @@ int Board::creation(int _c_value, int _y, int _x){
     return 0;
 }
 
-void Board::draw() {
-    for (int i = 0 ; i < size ; i++) {
+void Board::draw(int board[][]) {
+    for (int i = 0 ; i < _size ; i++) {
         std::cout << "________________" << std::endl;
 
-        for (int j = 0 ; j < size ; j++) {
-        std::cout << " | " << board[i][j].GetValue();
+        for (int j = 0 ; j < _size ; j++) {
+        std::cout << " | " << board[i][j];
         }
         std::cout << " |" << std::endl;
 
